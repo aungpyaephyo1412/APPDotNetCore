@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0C909C79-FA61-4442-A46E-EF93EBF21CAA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
