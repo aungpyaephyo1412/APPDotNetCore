@@ -47,7 +47,8 @@ namespace ConsoleApp
             cmd.Parameters.AddWithValue("@blogTitle", title);
             cmd.Parameters.AddWithValue("@blogAuthor", author);
             cmd.Parameters.AddWithValue("@blogContent", content);
-            cmd.ExecuteNonQuery();
+            int result = cmd.ExecuteNonQuery();
+            string message = result > 0 ? "Insert success" : "Insert Fail";
 
             connection.Close();
             Console.WriteLine("Connection Close.");
