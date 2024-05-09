@@ -7,5 +7,6 @@ Console.WriteLine("Hello, World!");
 
 AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 // adoDotNetExample.Read();
-adoDotNetExample.Create("blog title with ado","mg gyi","mg gyi gwin bu yin");
+// adoDotNetExample.Create("blog title with ado","mg gyi","mg gyi gwin bu yin");
+// adoDotNetExample.Update(2,"update title","update author","update content");
 Console.ReadKey();

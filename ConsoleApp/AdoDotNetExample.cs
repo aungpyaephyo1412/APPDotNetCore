@@ -52,6 +52,27 @@ namespace ConsoleApp
 
             connection.Close();
             Console.WriteLine("Connection Close.");
+            Console.WriteLine(message);
+        }
+
+        public void Update(int id ,string title, string author, string content)
+        {
+            SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+            connection.Open();
+            Console.WriteLine("Connection Open.");
+
+            string query = @"UPDATE TblBlog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+            cmd.Parameters.AddWithValue("@BlogTitle", title);
+            cmd.Parameters.AddWithValue("@BlogAuthor", author);
+            cmd.Parameters.AddWithValue("@BlogContent", content);
+            int result = cmd.ExecuteNonQuery();
+            string message = result > 0 ? "Update success" : "Update Fail";
+
+            connection.Close();
+            Console.WriteLine("Connection Close.");
+            Console.WriteLine(message);
         }
     }
 }
