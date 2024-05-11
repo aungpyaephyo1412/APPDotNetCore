@@ -62,4 +62,16 @@ public class DapperExample
         db.Execute(query,item);
     }
     
+    private void Delete(int id)
+    {
+        var item = new BlogDto
+        {
+            BlogId = id
+        };
+        string query = @"DELETE FROM TblBlog WHERE [BlogId]=@BlogId";
+
+        using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
+        db.Execute(query,item);
+    }
+
 }
