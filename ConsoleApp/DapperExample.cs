@@ -37,4 +37,29 @@ public class DapperExample
         db.Execute(query,item);
     }
     
+    private void Edit(int id)
+    {
+        using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
+        var item = db.Query("select * from tblBlog where id = @BlogId",new BlogDto{BlogId = id}).FirstOrDefault();
+        if (item == null)
+        {
+            Console.WriteLine("Data not found");
+            return;
+        }
+    }
+    
+    private void Update(int id, string title, string author, string content)
+    {
+        var item = new BlogDto
+        {
+            BlogId = id,
+            BlogTitle = title,
+            BlogAuthor = author,
+            BlogContent = content
+        };
+        string query = @"UPDATE TblBlog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
+        using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
+        db.Execute(query,item);
+    }
+    
 }
