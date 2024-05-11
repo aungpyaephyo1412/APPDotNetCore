@@ -23,4 +23,18 @@ public class DapperExample
             Console.WriteLine(li.BlogContent);
         }
     }
+    
+    private void Create(string title, string author, string content)
+    {
+        var item = new BlogDto
+        {
+            BlogTitle = title,
+            BlogAuthor = author,
+            BlogContent = content
+        };
+        string query = @"INSERT INTO TblBlog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
+        using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
+        db.Execute(query,item);
+    }
+    
 }
