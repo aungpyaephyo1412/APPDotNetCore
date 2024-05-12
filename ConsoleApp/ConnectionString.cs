@@ -10,5 +10,6 @@ public static class ConnectionString
         InitialCatalog = "DotNetSLH",
         UserID = "sa",
         Password = "Typle@14122003",
+        TrustServerCertificate = true
     };
 }

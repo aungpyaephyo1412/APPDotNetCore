@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp;
 
-public class AppDbConnect : DbContext
+public class AppDbContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
