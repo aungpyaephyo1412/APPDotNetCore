@@ -14,7 +14,7 @@ public class DapperExample
     private void Read()
     {
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        List<BlogDto> list = db.Query<BlogDto>("select * from tblBlog").ToList();
+        List<BlogDto> list = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
         foreach (var li in list)
         {
             Console.WriteLine(li.BlogId);
@@ -32,7 +32,7 @@ public class DapperExample
             BlogAuthor = author,
             BlogContent = content
         };
-        string query = @"INSERT INTO TblBlog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
+        string query = @"INSERT INTO Tbl_Blog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         db.Execute(query,item);
     }
@@ -40,7 +40,7 @@ public class DapperExample
     private void Edit(int id)
     {
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        var item = db.Query("select * from tblBlog where id = @BlogId",new BlogDto{BlogId = id}).FirstOrDefault();
+        var item = db.Query("select * from Tbl_Blog where id = @BlogId",new BlogDto{BlogId = id}).FirstOrDefault();
         if (item == null)
         {
             Console.WriteLine("Data not found");
@@ -57,7 +57,7 @@ public class DapperExample
             BlogAuthor = author,
             BlogContent = content
         };
-        string query = @"UPDATE TblBlog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
+        string query = @"UPDATE Tbl_Blog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         db.Execute(query,item);
     }
@@ -68,7 +68,7 @@ public class DapperExample
         {
             BlogId = id
         };
-        string query = @"DELETE FROM TblBlog WHERE [BlogId]=@BlogId";
+        string query = @"DELETE FROM Tbl_Blog WHERE [BlogId]=@BlogId";
 
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         db.Execute(query,item);

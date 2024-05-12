@@ -19,7 +19,7 @@ namespace ConsoleApp
             connection.Open();
             Console.WriteLine("Connection Open.");
 
-            string query = "SELECT * FROM TblBlog";
+            string query = "SELECT * FROM Tbl_Blog";
             SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -43,7 +43,7 @@ namespace ConsoleApp
             Console.WriteLine("Connection Open.");
 
             string query =
-                @"INSERT INTO TblBlog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
+                @"INSERT INTO Tbl_Blog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@blogTitle", title);
             cmd.Parameters.AddWithValue("@blogAuthor", author);
@@ -62,7 +62,7 @@ namespace ConsoleApp
             connection.Open();
             Console.WriteLine("Connection Open.");
 
-            string query = "SELECT * FROM TblBlog";
+            string query = "SELECT * FROM Tbl_Blog";
             SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -89,7 +89,7 @@ namespace ConsoleApp
             Console.WriteLine("Connection Open.");
 
             string query =
-                @"UPDATE TblBlog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
+                @"UPDATE Tbl_Blog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogId", id);
             cmd.Parameters.AddWithValue("@BlogTitle", title);
@@ -109,7 +109,7 @@ namespace ConsoleApp
             connection.Open();
             Console.WriteLine("Connection Open.");
 
-            string query = @"DELETE FROM TblBlog WHERE [BlogId]=@BlogId";
+            string query = @"DELETE FROM Tbl_Blog WHERE [BlogId]=@BlogId";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogId", id);
             int result = cmd.ExecuteNonQuery();
