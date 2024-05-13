@@ -1,6 +1,8 @@
+using ConsoleApp.Dtos;
+using ConsoleApp.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace ConsoleApp;
+namespace ConsoleApp.EfCoreExamples;
 
 public class AppDbContext : DbContext
 {

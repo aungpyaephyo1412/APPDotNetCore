@@ -1,6 +1,6 @@
 using System.Data.SqlClient;
 
-namespace ConsoleApp;
+namespace ConsoleApp.Services;
 
 public static class ConnectionString
 {

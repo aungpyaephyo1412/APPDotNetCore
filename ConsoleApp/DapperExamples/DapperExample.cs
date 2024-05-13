@@ -1,8 +1,10 @@
 using System.Data;
 using System.Data.SqlClient;
+using ConsoleApp.Dtos;
+using ConsoleApp.Services;
 using Dapper;
 
-namespace ConsoleApp;
+namespace ConsoleApp.DapperExamples;
 
 public class DapperExample
 {

@@ -1,4 +1,6 @@
-namespace ConsoleApp;
+using ConsoleApp.Dtos;
+
+namespace ConsoleApp.EfCoreExamples;
 
 public class EfCoreExample
 {

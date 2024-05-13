@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ConsoleApp;
+namespace ConsoleApp.Dtos;
 
 [Table("Tbl_Blog")]
 public class BlogDto
