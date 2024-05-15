@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi", "RestApi\RestApi.csproj", "{EEDA0244-F0EF-4B54-9447-D8F0E3CBC34C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F15FA58-48BD-4016-AC3F-D6BC7813E2DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEDA0244-F0EF-4B54-9447-D8F0E3CBC34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEDA0244-F0EF-4B54-9447-D8F0E3CBC34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEDA0244-F0EF-4B54-9447-D8F0E3CBC34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEDA0244-F0EF-4B54-9447-D8F0E3CBC34C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
