@@ -16,7 +16,7 @@ public class DapperExample
     private void Read()
     {
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        List<BlogDto> list = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
+        var list = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
         foreach (var li in list)
         {
             Console.WriteLine(li.BlogId);
@@ -25,7 +25,7 @@ public class DapperExample
             Console.WriteLine(li.BlogContent);
         }
     }
-    
+
     private void Create(string title, string author, string content)
     {
         var item = new BlogDto
@@ -34,22 +34,22 @@ public class DapperExample
             BlogAuthor = author,
             BlogContent = content
         };
-        string query = @"INSERT INTO Tbl_Blog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
+        var query =
+            @"INSERT INTO Tbl_Blog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        db.Execute(query,item);
+        db.Execute(query, item);
     }
-    
+
     private void Edit(int id)
     {
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        var item = db.Query("select * from Tbl_Blog where id = @BlogId",new BlogDto{BlogId = id}).FirstOrDefault();
+        var item = db.Query("select * from Tbl_Blog where id = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
         if (item == null)
         {
             Console.WriteLine("Data not found");
-            return;
         }
     }
-    
+
     private void Update(int id, string title, string author, string content)
     {
         var item = new BlogDto
@@ -59,21 +59,21 @@ public class DapperExample
             BlogAuthor = author,
             BlogContent = content
         };
-        string query = @"UPDATE Tbl_Blog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
+        var query =
+            @"UPDATE Tbl_Blog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        db.Execute(query,item);
+        db.Execute(query, item);
     }
-    
+
     private void Delete(int id)
     {
         var item = new BlogDto
         {
             BlogId = id
         };
-        string query = @"DELETE FROM Tbl_Blog WHERE [BlogId]=@BlogId";
+        var query = @"DELETE FROM Tbl_Blog WHERE [BlogId]=@BlogId";
 
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        db.Execute(query,item);
+        db.Execute(query, item);
     }
-
 }

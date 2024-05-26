@@ -4,7 +4,8 @@ namespace ConsoleApp.EfCoreExamples;
 
 public class EfCoreExample
 {
-    private readonly AppDbContext _db = new AppDbContext();
+    private readonly AppDbContext _db = new();
+
     public void Run()
     {
         // Read();
@@ -25,12 +26,13 @@ public class EfCoreExample
 
     private void Edit(int id)
     {
-        var item = _db.Blogs.FirstOrDefault(x=>x.BlogId == id);
+        var item = _db.Blogs.FirstOrDefault(x => x.BlogId == id);
         if (item is null)
         {
             Console.WriteLine("Data not found!");
             return;
         }
+
         Console.WriteLine(item.BlogId);
         Console.WriteLine(item.BlogTitle);
         Console.WriteLine(item.BlogAuthor);
@@ -46,30 +48,31 @@ public class EfCoreExample
             BlogContent = content
         };
         _db.Blogs.Add(item);
-        int result = _db.SaveChanges();
-        string message = result > 0 ? "Success" : "Fail";
+        var result = _db.SaveChanges();
+        var message = result > 0 ? "Success" : "Fail";
         Console.WriteLine(message);
     }
 
     private void Update(int id, string title, string author, string content)
     {
-        var item = _db.Blogs.FirstOrDefault(x=>x.BlogId == id);
+        var item = _db.Blogs.FirstOrDefault(x => x.BlogId == id);
         if (item is null)
         {
             Console.WriteLine("Data not found!");
             return;
         }
+
         item.BlogTitle = title;
         item.BlogAuthor = author;
         item.BlogContent = content;
-        int result = _db.SaveChanges();
-        string message = result > 0 ? "Success" : "Fail";
+        var result = _db.SaveChanges();
+        var message = result > 0 ? "Success" : "Fail";
         Console.WriteLine(message);
     }
 
     private void Delete(int id)
     {
-        var item = _db.Blogs.FirstOrDefault(x=>x.BlogId == id);
+        var item = _db.Blogs.FirstOrDefault(x => x.BlogId == id);
         if (item is null)
         {
             Console.WriteLine("Data not found!");
@@ -77,8 +80,8 @@ public class EfCoreExample
         }
 
         _db.Blogs.Remove(item);
-        int result = _db.SaveChanges();
-        string message = result > 0 ? "Success" : "Fail";
+        var result = _db.SaveChanges();
+        var message = result > 0 ? "Success" : "Fail";
         Console.WriteLine(message);
     }
 }

@@ -1,7 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace RestApi.Models;
+namespace RestApiWithNLayer.Models;
 
 [Table("Tbl_Blog")]
 public class BlogModel

@@ -13,19 +13,21 @@ public class DapperService
         _connectionString = connectionString;
     }
 
-    public List<T> Query<T>(string query,object? param = null )
+    public List<T> Query<T>(string query, object? param = null)
     {
         using IDbConnection db = new SqlConnection(_connectionString);
-        return db.Query<T>(query,param).ToList();
+        return db.Query<T>(query, param).ToList();
     }
-    public T QueryFirstOrDefault<T>(string query,object? param = null )
+
+    public T QueryFirstOrDefault<T>(string query, object? param = null)
     {
         using IDbConnection db = new SqlConnection(_connectionString);
-        return db.Query<T>(query,param).FirstOrDefault()!;
+        return db.Query<T>(query, param).FirstOrDefault()!;
     }
-    public int Execute(string query,object? param = null)
+
+    public int Execute(string query, object? param = null)
     {
         using IDbConnection db = new SqlConnection(_connectionString);
-        return db.Execute(query,param);
+        return db.Execute(query, param);
     }
 }

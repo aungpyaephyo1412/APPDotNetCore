@@ -8,7 +8,25 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.17"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.6"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="Microsoft.Data.SqlClient">
+            <HintPath>..\..\..\.nuget\packages\microsoft.data.sqlclient\5.1.5\ref\net6.0\Microsoft.Data.SqlClient.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.EntityFrameworkCore">
+            <HintPath>..\..\..\.nuget\packages\microsoft.entityframeworkcore\7.0.18\lib\net6.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="data.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

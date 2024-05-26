@@ -7,21 +7,21 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Dapper" Version="2.1.35" />
+        <PackageReference Include="Dapper" Version="2.1.35"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.17"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
-        <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.6"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="Microsoft.EntityFrameworkCore">
-        <HintPath>..\..\..\.nuget\packages\microsoft.entityframeworkcore\7.0.18\lib\net6.0\Microsoft.EntityFrameworkCore.dll</HintPath>
-      </Reference>
+        <Reference Include="Microsoft.EntityFrameworkCore">
+            <HintPath>..\..\..\.nuget\packages\microsoft.entityframeworkcore\7.0.18\lib\net6.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Shared\Shared.csproj" />
+        <ProjectReference Include="..\Shared\Shared.csproj"/>
     </ItemGroup>
 
 </Project>

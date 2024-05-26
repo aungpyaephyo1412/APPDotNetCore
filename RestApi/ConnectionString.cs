@@ -4,7 +4,7 @@ namespace RestApi;
 
 public static class ConnectionString
 {
-    public static readonly SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+    public static readonly SqlConnectionStringBuilder SqlConnectionStringBuilder = new()
     {
         DataSource = ".", /* Server Name */
         InitialCatalog = "DotNetSLH",

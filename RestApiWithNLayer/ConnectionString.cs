@@ -1,6 +1,4 @@
-using System.Data.SqlClient;
-
-namespace ConsoleApp.Services;
+namespace RestApiWithNLayer;
 
 public static class ConnectionString
 {

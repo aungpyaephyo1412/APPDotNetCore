@@ -1,12 +1,8 @@
-using ConsoleApp.Dtos;
-using ConsoleApp.Services;
-using Microsoft.EntityFrameworkCore;
-
-namespace ConsoleApp.EfCoreExamples;
+namespace RestApiWithNLayer.Database;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<BlogDto> Blogs { get; set; }
+    public DbSet<BlogModel> Blogs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

@@ -13,9 +13,9 @@ public class BlogDapperController : ControllerBase
     [HttpGet]
     public IActionResult GetBlogs()
     {
-        string query = "select * from Tbl_Blog";
+        var query = "select * from Tbl_Blog";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-        List<BlogModel> list = db.Query<BlogModel>(query).ToList();
+        var list = db.Query<BlogModel>(query).ToList();
         return Ok(list);
     }
 
@@ -23,10 +23,7 @@ public class BlogDapperController : ControllerBase
     public IActionResult GetBlog(int id)
     {
         var item = FindById(id);
-        if (item is null)
-        {
-            return NotFound();
-        }
+        if (item is null) return NotFound();
 
         return Ok();
     }
@@ -34,7 +31,7 @@ public class BlogDapperController : ControllerBase
     [HttpPost]
     public IActionResult CreateBlog(BlogModel blog)
     {
-        string query =
+        var query =
             @"INSERT INTO Tbl_Blog ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES (@blogTitle,@blogAuthor,@blogContent)";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         db.Execute(query, blog);
@@ -44,14 +41,11 @@ public class BlogDapperController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateBlog(int id, BlogModel blog)
     {
-        string query =
+        var query =
             @"UPDATE Tbl_Blog SET [BlogTitle] = @BlogTitle,[BlogAuthor] = @BlogAuthor,[BlogContent]=@BlogContent WHERE BlogId=@BlogId";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         var item = FindById(id);
-        if (item is null)
-        {
-            return NotFound();
-        }
+        if (item is null) return NotFound();
 
         blog.BlogId = id;
         db.Execute(query, blog);
@@ -63,34 +57,19 @@ public class BlogDapperController : ControllerBase
     {
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         var item = FindById(id);
-        if (item is null)
-        {
-            return NotFound();
-        }
+        if (item is null) return NotFound();
 
-        string conditions = string.Empty;
-        if (!string.IsNullOrEmpty(blog.BlogTitle))
-        {
-            conditions += "[BlogTitle] = @BlogTitle,";
-        }
+        var conditions = string.Empty;
+        if (!string.IsNullOrEmpty(blog.BlogTitle)) conditions += "[BlogTitle] = @BlogTitle,";
 
-        if (!string.IsNullOrEmpty(blog.BlogAuthor))
-        {
-            conditions += "[BlogAuthor] = @BlogAuthor,";
-        }
+        if (!string.IsNullOrEmpty(blog.BlogAuthor)) conditions += "[BlogAuthor] = @BlogAuthor,";
 
-        if (!string.IsNullOrEmpty(blog.BlogContent))
-        {
-            conditions += "[BlogContent] = @BlogContent,";
-        }
+        if (!string.IsNullOrEmpty(blog.BlogContent)) conditions += "[BlogContent] = @BlogContent,";
 
-        if (conditions.Length == 0)
-        {
-            return NotFound();
-        }
+        if (conditions.Length == 0) return NotFound();
 
         conditions = conditions.Substring(conditions.Length - 2);
-        string query =
+        var query =
             $@"UPDATE Tbl_Blog SET {conditions}";
         blog.BlogId = id;
         db.Execute(query, blog);
@@ -101,12 +80,9 @@ public class BlogDapperController : ControllerBase
     public IActionResult DeleteBlog(int id)
     {
         var item = FindById(id);
-        if (item is null)
-        {
-            return NotFound();
-        }
+        if (item is null) return NotFound();
 
-        string query = @"DELETE FROM Tbl_Blog WHERE [BlogId]=@BlogId";
+        var query = @"DELETE FROM Tbl_Blog WHERE [BlogId]=@BlogId";
 
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         db.Execute(query, new BlogModel { BlogId = id });
@@ -115,7 +91,7 @@ public class BlogDapperController : ControllerBase
 
     private BlogModel? FindById(int id)
     {
-        string query = "select * from Tbl_Blog where id = @BlogId";
+        var query = "select * from Tbl_Blog where id = @BlogId";
         using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
         return db.Query(query, new BlogModel { BlogId = id }).FirstOrDefault();
     }
