@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiWithNLayer", "RestAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppWithHTTPClient", "ConsoleAppWithHTTPClient\ConsoleAppWithHTTPClient.csproj", "{1664E2F6-BED4-48BA-9428-5AE6694A5AB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppWithHTTPClientExample", "ConsoleAppWithHTTPClientExample\ConsoleAppWithHTTPClientExample.csproj", "{AD01CF26-5414-4AA4-9E33-97191EA8D57C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{1664E2F6-BED4-48BA-9428-5AE6694A5AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1664E2F6-BED4-48BA-9428-5AE6694A5AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1664E2F6-BED4-48BA-9428-5AE6694A5AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD01CF26-5414-4AA4-9E33-97191EA8D57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD01CF26-5414-4AA4-9E33-97191EA8D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD01CF26-5414-4AA4-9E33-97191EA8D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD01CF26-5414-4AA4-9E33-97191EA8D57C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
